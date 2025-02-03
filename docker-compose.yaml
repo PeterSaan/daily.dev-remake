@@ -1,0 +1,46 @@
+name: daily.dev-remake
+
+services:
+  db:
+    image: mariadb:11.5
+    container_name: daily.dev-remake_database
+    restart: always
+    env_file:
+      - ./server/.env
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  server:
+    build:
+      context: ./server/
+      dockerfile: server.Dockerfile
+    container_name: daily.dev-remake_server
+    restart: always
+    env_file:
+      - ./server/.env
+    working_dir: /server
+    depends_on:
+      - db
+    ports:
+      - 3006:3006
+    command: go run cmd/api/api.go
+
+  client:
+    build:
+      context: ./client/
+      dockerfile: client.Dockerfile
+    container_name: daily.dev-remake_client
+    restart: always
+    env_file:
+        - ./client/.env
+    working_dir: /client
+    depends_on:
+      - server
+    ports:
+      - 3000:3000
+    command: bun run dev
+
+volumes:
+  db-data:
