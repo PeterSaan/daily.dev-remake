@@ -1,7 +1,22 @@
 # daily.dev-remake
-Remake of daily.dev for Kaspar
+Remake of daily.dev
 
-# MVP
+## Run the app
+- Open project root and copy `.env` files from examples into `client` and `server` directories:
+```bash
+cp client/.env.example client/.env
+cp server/.env.example server/.env
+```
+- Make sure the ports used in `docker-compose.yaml` are open (3000, 3006 and 3306 atm)
+- Finally run docker (in a terminal):
+```bash
+# For detached state
+docker compose up -d
+# Or for hot reload without detachment
+docker compose watch
+```
+
+## MVP
 - The app provides tech news, blog posts, videos etc., specifically tailored for developers
 - The user must sign up and verify email to access full functionality - except for a shared link to specific content
 - Admin accounts exist to manage content and review role upgrades
@@ -19,6 +34,6 @@ Remake of daily.dev for Kaspar
     - Squads: users with under 250 reputation
     - Community picks: users with 250 and over reputation
     - Sources: users that are owners of established publications or platforms in the developer community and are verified by admins
-- Users (with appropirate acces) can vote and comment on posts and other comments
+- Users (with appropirate access) can vote and comment on posts and other comments
 - The user has the option of enabling reading streaks
 - The user can see reading history
