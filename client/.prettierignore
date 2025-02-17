@@ -1,0 +1,3 @@
+**/*.html
+**/*.json
+vite.config.ts
