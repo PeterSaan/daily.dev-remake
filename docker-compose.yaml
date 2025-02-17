@@ -26,6 +26,11 @@ services:
     ports:
       - 3006:3006
     command: go run cmd/api/api.go
+    develop:
+      watch:
+        - action: sync
+          path: ./server
+          target: /server
 
   client:
     build:
@@ -41,6 +46,13 @@ services:
     ports:
       - 3000:3000
     command: bun run dev
+    develop:
+      watch:
+        - action: sync
+          path: ./client
+          target: /client
+          ignore:
+            - node_modules/
 
 volumes:
   db-data:
