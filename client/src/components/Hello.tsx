@@ -1,7 +1,7 @@
 export default function Hello() {
-	return(
+	return (
 		<>
-			<h1 class="text-3xl font-bold underline">Helou human</h1>
+			<h1 class='text-3xl font-bold underline'>Helou human</h1>
 		</>
-	)
+	);
 }
