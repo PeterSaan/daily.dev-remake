@@ -1,8 +1,7 @@
-
 export default function Index() {
 	return (
-		<div>
-			nig
+		<div class="text-red-500">
+			This route doesn't existst
 		</div>
 	);
 }

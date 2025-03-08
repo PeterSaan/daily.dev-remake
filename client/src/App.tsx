@@ -1,13 +1,11 @@
-import Main from './pages/Index';
+import Topbar from './components/Topbar';
+import Sidebar from './components/Sidebar';
 
-function App() {
+export default function App() {
 	return (
-		<>
-			<div class='flex justify-center'>
-				<Main />
-			</div>
-		</>
+		<div class='min-h-screen bg-zinc-900'>
+			<Topbar />
+			<Sidebar />
+		</div>
 	);
 }
-
-export default App;
