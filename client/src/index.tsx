@@ -4,16 +4,19 @@ import { Route, Router } from '@solidjs/router';
 import { lazy } from 'solid-js';
 
 const App = lazy(() => import('./App'));
-const Home = lazy(() => import('./pages/Index'));
-const NotFound = lazy(() => import('./pages/error/NotFound'));
+const Home = lazy(() => import('./routes/Index'));
+const NotFound = lazy(() => import('./routes/error/NotFound'));
 
 const root = document.getElementById('root');
 
-render(() => (
-	<Router root={App}>
-		<Route path='/' component={Home}></Route>
-		<Route path='*404' component={NotFound}></Route>
-	</Router>
+if (!root) throw new Error("Root div not found");
+
+render(
+	() => (
+		<Router root={App}>
+			<Route path="/" component={Home} />
+			<Route path="*" component={NotFound} />
+		</Router>
 	),
-	root!
-);
+	root
+)

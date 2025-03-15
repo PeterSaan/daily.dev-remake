@@ -1,8 +1,7 @@
-
 export default function Index() {
 	return (
-		<div>
-			nig
+		<div class="container text-white">
+			testHome
 		</div>
 	);
 }
