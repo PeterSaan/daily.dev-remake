@@ -6,8 +6,10 @@ export default function App(props: ParentProps) {
 	return (
 		<div class='antialiased'>
 			<Topbar />
-			<Sidebar />
-			{props.children}
+			<div class='flex flex-col'>
+				<Sidebar />
+				{props.children}
+			</div>
 		</div>
 	);
 }
