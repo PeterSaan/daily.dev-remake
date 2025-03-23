@@ -1,7 +1,6 @@
 package main
 
 import (
-	"daily.dev-remake/internal/db"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -10,7 +9,7 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.GET("/", func(ctx *gin.Context) {
+	router.GET("/v1/", func(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, gin.H{
 			"hello": "world",
 		})
