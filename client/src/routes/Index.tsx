@@ -1,3 +1,7 @@
+import PostCard from "../components/PostCard";
+
 export default function Index() {
-	return <div class='container'></div>;
+	return <div>
+		<PostCard></PostCard>
+	</div>;
 }
