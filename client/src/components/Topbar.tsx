@@ -4,24 +4,24 @@ import StreakIcon from '../icons/streak';
 
 export default function Topbar() {
 	return (
-		<nav class='sticky navbar top-0 px-5 py-2 border-b border-zinc-700'>
+		<nav class='sticky navbar top-0 px-5 py-1 border-b border-zinc-700'>
 			<div class='navbar-start'>
-				<A href='/' class='my-5 text-xl text-white font-bold'>
-					weekly.dev
+				<A href='/' class='my-4 text-white font-bold'>
+					daily.dev
 				</A>
 			</div>
 			<div class='navbar-center'>
-				<div class='inline-flex items-center ps-3 py-4 bg-zinc-800 text-white rounded-2xl'>
+				<div class='inline-flex items-center ps-2 py-3 bg-zinc-800 text-white rounded-2xl'>
 					<SearchIcon />
 					<input
 						id='search-bar'
 						type='text'
 						name='search'
 						placeholder='Search'
-						class='inline-flex w-full h-full text-2xl focus:outline-none'
+						class='inline-flex w-full h-full text-lg focus:outline-none'
 					/>
 					<div class='inline-flex px-3'>
-						<div class='kbd kbd-lg'>Ctrl</div>+<div class='kbd kbd-lg'>K</div>
+						<div class='kbd'>Ctrl</div>+<div class='kbd'>K</div>
 					</div>
 				</div>
 			</div>

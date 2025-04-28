@@ -46,7 +46,7 @@ services:
     container_name: daily.dev-remake_client
     restart: always
     env_file:
-        - ./client/.env
+      - ./client/.env
     working_dir: /client
     depends_on:
       - server
