@@ -1,5 +1,6 @@
 import ArrowDownCircle from '../icons/arrow-down-circle';
 import ArrowUpCircle from '../icons/arrow-up-circle';
+import TopicCard from './TopicCard';
 
 export default function PostCard() {
 	return (
@@ -22,12 +23,10 @@ export default function PostCard() {
 			</div>
 			<div class='flex mb-8 text-xl font-semibold'>Is Go dead?</div>
 			<div class='flex mb-3 flex-row gap-x-2'>
-				<div class='badge border-zinc-700 rounded-lg bg-base-300'>#golang</div>
-				<div class='badge border-zinc-700 rounded-lg bg-base-300'>
-					#stupidity
-				</div>
+				<TopicCard topicName="golang" />
+				<TopicCard topicName="stupidity" />
 			</div>
-			<div class='flex justify-end mb-2 text-xs text-base-content'>Today</div>
+			<div class='flex justify-end me-2 mb-2 text-xs text-base-content'>Today</div>
 			<div class='flex mb-5'>
 				<img
 					class='object-cover rounded-xl'
@@ -39,13 +38,13 @@ export default function PostCard() {
 			</div>
 			<div class='flex flex-row'>
 				<button
-					class='flex py-1 ps-2 pe-3 gap-x-2 border border-e-0 rounded-s-xl'
+					class='flex py-1 ps-2 pe-3 gap-x-2 border border-e-0 rounded-s-xl cursor-pointer hover:bg-green-500 active:bg-green-700'
 					onclick={() => console.log('test')}
 				>
 					<ArrowUpCircle />
-					247
+					1
 				</button>
-				<button class='ps-3 pe-2 border border-s-0 rounded-e-xl'>
+				<button class='px-3 border border-s-0 rounded-e-xl cursor-pointer hover:bg-red-500 active:bg-red-700'>
 					<ArrowDownCircle />
 				</button>
 			</div>
